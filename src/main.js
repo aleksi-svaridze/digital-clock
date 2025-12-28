@@ -5,15 +5,12 @@ const secondsContainer = document.querySelector("#seconds");
 function updateClock() {
   const currentTime = new Date();
 
-  let hours = currentTime.getHours().toString().padStart(2, "0");
-  let minutes = currentTime.getMinutes().toString().padStart(2, "0");
-  let seconds = currentTime.getSeconds().toString().padStart(2, "0");
+  const format = (value) => String(value).padStart(2, "0");
 
-  hoursContainer.textContent = hours;
-  minutesContainer.textContent = minutes;
-  secondsContainer.textContent = seconds;
+  hoursContainer.textContent = format(currentTime.getHours());
+  minutesContainer.textContent = format(currentTime.getMinutes());
+  secondsContainer.textContent = format(currentTime.getSeconds());
 }
 
-setInterval(() => {
-  updateClock();
-}, 1000);
+updateClock();
+setInterval(updateClock, 1000);
