@@ -7,12 +7,28 @@
     <link rel="stylesheet" href="./src/style.css" />
     <title>js-clock</title>
   </head>
-  <body class="bg-red-400 flex items-center justify-center h-screen">
-    <div id="clock" class="flex items-center gap-x-5 bg-red-700">
-      <div id="hours"></div>
-      <div id="minutes"></div>
-      <div id="seconds"></div>
+  <body
+    class="bg-linear-to-r from-red-900 to-red-400 flex items-center justify-center h-screen"
+  >
+    <div class="flex items-center justify-center relative p-30 z-10">
+      <div
+        class="absolute left-10 top-6 w-40 h-40 rotate-45 bg-green-600 z-0 shadow-2xl"
+      ></div>
+      <div
+        class="absolute right-0 bottom-0 w-48 h-48 bg-blue-500 z-0 rounded-full shadow-2xl"
+      ></div>
+      <div
+        id="clock"
+        class="flex items-center gap-x-5 shadow-2xl rounded-xl backdrop-blur-lg px-20 py-10 bg-[rgba(255,255,255,0.2)] text-white text-8xl"
+      >
+        <span id="hours"></span>
+        :
+        <span id="minutes"></span>
+        :
+        <span id="seconds"></span>
+      </div>
     </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
